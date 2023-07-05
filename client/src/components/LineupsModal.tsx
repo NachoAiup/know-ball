@@ -83,10 +83,10 @@ function LineupsModal({ setHelpsUsed, matchesArr }: LineupsModalProps) {
                   ? JSON.parse(matchesArr.home_lineup)
                   : JSON.parse(matchesArr.away_lineup)
                 )
-                  ?.sort((a, b) => {
+                  ?.sort((a: any, b: any) => {
                     return a.number - b.number;
                   })
-                  .map((x) => (
+                  .map((x: any) => (
                     <li key={nanoid()} className="lg:text-base text-sm">
                       <strong>{x.number && x.number + ". "}</strong>
                       {x.name}
@@ -99,10 +99,10 @@ function LineupsModal({ setHelpsUsed, matchesArr }: LineupsModalProps) {
                 </p>
                 <ul>
                   {JSON.parse(matchesArr.home_lineup)
-                    .sort((a, b) => {
+                    .sort((a: any, b: any) => {
                       return a.number - b.number;
                     })
-                    .map((x) => (
+                    .map((x: any) => (
                       <li key={nanoid()} className="lg:text-base text-sm">
                         <strong>{x.number && x.number + ". "}</strong>
                         {x.name}
