@@ -14,7 +14,7 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: "http://127.0.0.1:5173" }));
+app.use(cors({ origin: process.env.CLIENT_URL }));
 
 app.use("/api", apiRoutes);
 
