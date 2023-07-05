@@ -29,11 +29,11 @@ CREATE TABLE `fixtures` (
   `home_team` varchar(100) DEFAULT NULL,
   `home_score` int DEFAULT NULL,
   `home_logo` varchar(300) DEFAULT NULL,
-  `home_lineup` json DEFAULT NULL,
+  `home_lineup` varchar(1500) DEFAULT NULL,
   `away_team` varchar(100) DEFAULT NULL,
   `away_score` int DEFAULT NULL,
   `away_logo` varchar(300) DEFAULT NULL,
-  `away_lineup` json DEFAULT NULL,
+  `away_lineup` varchar(1500) DEFAULT NULL,
   `position_home` int DEFAULT NULL,
   `position_away` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ResultModal from "./ResultModal";
 import { formatDate, calculateScore } from "../utils/rules";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface MatchCardProps {
   helpsUsed: boolean;
@@ -68,12 +69,21 @@ function MatchCard({
       <div className="flex relative">
         <div className="lg:p-10 flex justify-center items-center">
           <div className="flex w-24 lg:w-32 max-h-42 flex-col justify-between items-center">
-            <div className="lg:w-28 p-2 h-32 flex justify-center items-center">
-              <img src={matchesArr.home_logo} className="lg:w-24 w-16 h-auto" />
-            </div>
-            <h2 className="text-center w-full mt-2 h-10 font-semibold text-sm lg:text-lg">
-              {matchesArr.home_team}
-            </h2>
+            {!matchesArr.season ? (
+              <LoadingSpinner />
+            ) : (
+              <>
+                <div className="lg:w-28 p-2 h-32 flex justify-center items-center">
+                  <img
+                    src={matchesArr.home_logo}
+                    className="lg:w-24 w-16 h-auto"
+                  />
+                </div>
+                <h2 className="text-center w-full mt-2 h-10 font-semibold text-sm lg:text-lg">
+                  {matchesArr.home_team}
+                </h2>
+              </>
+            )}
           </div>
         </div>
         <div className="lg:p-8 p-2 flex justify-center items-center">
@@ -82,9 +92,13 @@ function MatchCard({
             onSubmit={handleSubmit}
           >
             <div className="text-sm lg:text-lg">
-              {formatDate(matchesArr.match_date)[2] + " "}
-              {formatDate(matchesArr.match_date)[0] + ", "}
-              <strong>{formatDate(matchesArr.match_date)[1]}</strong>
+              {matchesArr.match_date &&
+                formatDate(matchesArr.match_date)[2] + " "}
+              {matchesArr.match_date &&
+                formatDate(matchesArr.match_date)[0] + ", "}
+              <strong>
+                {matchesArr.match_date && formatDate(matchesArr.match_date)[1]}
+              </strong>
             </div>
             <div className="text-sm lg:text-md font-bold">
               Gameweek {matchesArr.gameweek}°
@@ -122,12 +136,21 @@ function MatchCard({
         </div>
         <div className="lg:p-10 flex justify-center items-center">
           <div className="flex w-24 lg:w-32 max-h-42 flex-col justify-between items-center">
-            <div className="lg:w-28 p-2 h-32 flex justify-center items-center">
-              <img src={matchesArr.away_logo} className="lg:w-24 w-16 h-auto" />
-            </div>
-            <h2 className="text-center w-full mt-2 h-10 font-semibold text-sm lg:text-lg">
-              {matchesArr.away_team}
-            </h2>
+            {!matchesArr.season ? (
+              <LoadingSpinner />
+            ) : (
+              <>
+                <div className="lg:w-28 p-2 h-32 flex justify-center items-center">
+                  <img
+                    src={matchesArr.away_logo}
+                    className="lg:w-24 w-16 h-auto"
+                  />
+                </div>
+                <h2 className="text-center w-full mt-2 h-10 font-semibold text-sm lg:text-lg">
+                  {matchesArr.away_team}
+                </h2>
+              </>
+            )}
           </div>
         </div>
       </div>

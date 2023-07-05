@@ -1,8 +1,3 @@
-interface Lineup {
-  name: string;
-  number: number;
-}
-
 interface Match {
   gameweek: number;
   season: string;
