@@ -1,7 +1,7 @@
 {
   "name": "know-ball",
   "private": true,
-  "proxy": import.meta.env.VITE_API_URL,
+  "proxy": "http://localhost:5000/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
