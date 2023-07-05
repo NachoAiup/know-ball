@@ -80,8 +80,8 @@ function LineupsModal({ setHelpsUsed, matchesArr }: LineupsModalProps) {
               </div>
               <ul className="sm:hidden mt-5">
                 {(homeTeamSelected
-                  ? matchesArr.home_lineup
-                  : matchesArr.away_lineup
+                  ? JSON.parse(matchesArr.home_lineup)
+                  : JSON.parse(matchesArr.away_lineup)
                 )
                   ?.sort((a, b) => {
                     return a.number - b.number;
@@ -98,7 +98,7 @@ function LineupsModal({ setHelpsUsed, matchesArr }: LineupsModalProps) {
                   {matchesArr.home_team}
                 </p>
                 <ul>
-                  {matchesArr.home_lineup
+                  {JSON.parse(matchesArr.home_lineup)
                     .sort((a, b) => {
                       return a.number - b.number;
                     })
@@ -115,7 +115,7 @@ function LineupsModal({ setHelpsUsed, matchesArr }: LineupsModalProps) {
                   {matchesArr.away_team}
                 </p>
                 <ul>
-                  {matchesArr.away_lineup
+                  {JSON.parse(matchesArr.away_lineup)
                     ?.sort((a, b) => {
                       return a.number - b.number;
                     })
