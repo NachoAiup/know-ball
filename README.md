@@ -1,7 +1,7 @@
 # know-ball
 
 KnowBall is a football guessing game that consists of 5 rounds, in each of them a random match of the last seasons of the Premier League will be given. The goal is to get the correct result. If you get the exact result you score more points and if you use the help you will lose 1 point.
-
+Deployed version: https://know-ball-vlx1.onrender.com/
 ## Illustrations
 
 ![image](https://github.com/NachoAiup/know-ball/assets/102685747/aeb2e2a7-c895-4105-a1d6-6efb1ac594a4)
