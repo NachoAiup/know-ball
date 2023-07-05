@@ -6,8 +6,6 @@ import MatchCard from "./components/MatchCard";
 import EndGameModal from "./components/EndGameModal";
 import { dataInitialState } from "./utils/rules";
 
-const API_URL = "http://localhost:5000/api";
-
 function App() {
   const [helpsUsed, setHelpsUsed] = useState(false);
   const [points, setPoints] = useState(0);
@@ -16,7 +14,7 @@ function App() {
   const [endGame, setEndGame] = useState(false);
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(import.meta.env.VITE_API_URL)
       .then((res) => res.json())
       .then((data) => setMatchesArr(data));
   }, []);
